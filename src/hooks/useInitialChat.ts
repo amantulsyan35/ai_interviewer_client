@@ -4,7 +4,8 @@ export function useInitialChat(interviewId: string) {
   return useQuery({
     queryKey: ["chat", interviewId, "start"] as const,
     queryFn: async () => {
-      const res = await fetch(`http://localhost:8000/chat`, {
+      const API_URL = import.meta.env.VITE_API_URL;
+      const res = await fetch(`${API_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

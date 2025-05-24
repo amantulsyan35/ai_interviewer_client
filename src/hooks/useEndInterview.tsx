@@ -11,7 +11,8 @@ export function useEndInterview(interviewId: number) {
 
   return useMutation({
     mutationFn: async () => {
-      const res = await fetch(`http://localhost:8000/feedback`, {
+      const API_URL = import.meta.env.VITE_API_URL;
+      const res = await fetch(`${API_URL}/feedback`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ interviewId: +interviewId }),

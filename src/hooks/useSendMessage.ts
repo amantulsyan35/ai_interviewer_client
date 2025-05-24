@@ -9,7 +9,8 @@ export function useSendMessage() {
     { interviewId: string; message: string }
   >({
     mutationFn: async ({ interviewId, message }) => {
-      const res = await fetch(`http://localhost:8000/chat`, {
+      const API_URL = import.meta.env.VITE_API_URL;
+      const res = await fetch(`${API_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ interviewId: +interviewId, message }),

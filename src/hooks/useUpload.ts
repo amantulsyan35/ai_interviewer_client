@@ -12,10 +12,11 @@ export interface UploadResponse {
 
 export function useUpload() {
   const navigate = useNavigate();
+  const API_URL = import.meta.env.VITE_API_URL;
 
   return useMutation<UploadResponse, Error, UploadPayload>({
     mutationFn: async ({ resumeUrl, jobDescUrl }) => {
-      const res = await fetch(`http://localhost:8000/upload`, {
+      const res = await fetch(`${API_URL}/upload`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ resumeUrl, jobDescUrl }),
