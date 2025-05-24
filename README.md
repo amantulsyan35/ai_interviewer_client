@@ -29,7 +29,7 @@ Make sure you have the following installed on your development machine:
 
 ## 🚀 Getting Started
 
-Follow these steps to get started with the react-vite-ui template:
+Follow these steps to get started:
 
 1. Clone the repository:
 
@@ -49,7 +49,13 @@ Follow these steps to get started with the react-vite-ui template:
    npm install
    ```
 
-4. Start the development server:
+4. Add env for server URL:
+
+   ```bash
+   VITE_API_URL=http://localhost:8000
+   ```
+
+5. Start the development server:
 
    ```bash
    npm dev
