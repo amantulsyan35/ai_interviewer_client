@@ -57,6 +57,19 @@ export default function InterviewPage() {
     }
   }, [initialMsg]);
 
+  // Text to speech for AI
+  useEffect(() => {
+    if (!("speechSynthesis" in window)) return;
+    if (messages.length === 0) return;
+
+    const lastMsg = messages[messages.length - 1];
+    if (lastMsg.type === "ai") {
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(lastMsg.content);
+      window.speechSynthesis.speak(utter);
+    }
+  }, [messages]);
+
   const handleSubmitResponse = () => {
     const text = currentResponse.trim();
     if (!text) return;
@@ -90,7 +103,6 @@ export default function InterviewPage() {
   const handleEndInterview = () => {
     endInterview.mutate(undefined, {
       onSuccess: (data) => {
-        // e.g. navigate to feedback page
         navigate(`/feedback/${data.feedbackId}`);
       },
     });

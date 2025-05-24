@@ -26,7 +26,7 @@ import { DocUploader, type UploadedDoc } from "../components/DocUploader";
 export default function LandingPage() {
   const [resumeFiles, setResumeFiles] = useState<UploadedDoc[]>([]);
   const [jobDescFiles, setJobDescFiles] = useState<UploadedDoc[]>([]);
-  const { mutate } = useUpload();
+  const { mutate, isPending } = useUpload();
 
   const handleNext = () => {
     const resumeUrl = resumeFiles[0]?.url;
@@ -165,10 +165,12 @@ export default function LandingPage() {
             <Button
               size="lg"
               className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-3 text-lg"
-              disabled={!resumeFiles || !jobDescFiles}
+              disabled={
+                !resumeFiles.length || !jobDescFiles.length || isPending
+              }
               onClick={handleNext}
             >
-              Start AI Interview
+              {isPending ? "Preparing for Interview" : "Start AI Interview"}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             {(!resumeFiles || !jobDescFiles) && (
