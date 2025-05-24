@@ -1,54 +1,85 @@
-# React + TypeScript + Vite
+# InterviewAI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + Vite app powered by shadcn/ui.
 
-Currently, two official plugins are available:
+## 🎉 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **File Upload**  
+  - Drag-and-drop or click-to-select resume and job description  
+  - Accepts PDF, DOC, DOCX  
+- **Chat Interface**  
+  - Streamed AI questions and user answers in a scrollable pane  
+  - “Send” button with loading state  
+  - Tracks a 5-question interview flow  
+- **Interview Control**  
+  - “Start Interview” after uploads  
+  - “End Interview” button after 5 questions  
+- **Styling & Layout**  
+  - Built with Vite (React + TS)  
+  - React Router for navigation (`/`, `/interview/:id`, `/feedback/:id`)  
+  - Tailwind CSS + shadcn/ui components  
+  - Consistent light/dark styling 
 
-## Expanding the ESLint configuration
+## ⚙️ Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Make sure you have the following installed on your development machine:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Node.js (version 22 or above)
+- npm (package manager)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Follow these steps to get started with the react-vite-ui template:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/amantulsyan35/ai_interviewer_client
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd ai_interviewer_client
+   ```
+
+3. Install the dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm dev
+   ```
+
+## 📜 Available Scripts
+
+- npm dev - Starts the development server.
+- npm build - Builds the production-ready code.
+- npm lint - Runs ESLint to analyze and lint the code.
+- npm preview - Starts the Vite development server in preview mode.
+
+## 📂 Project Structure
+
+The project structure follows a standard React application layout:
+
+```python
+ai_interviewer_client/
+  ├── node_modules/      # Project dependencies
+  ├── public/            # Public assets
+  ├── src/               # Application source code
+  │   ├── components/    # React components
+  │   │   └── ui/        # shadc/ui components
+  │   ├── lib/           # Utility functions
+  │   ├── hooks/         # Hooks for data fetching and mutation  
+  │   ├── routes/        # Individual Pages for routes
+  │   ├── App.tsx        # Application entry point
+  │   └── main.tsx       # Main rendering file
+  ├── eslint.config.js   # ESLint configuration
+  ├── index.html         # HTML entry point
+  ├── tsconfig.json      # TypeScript configuration
+  └── vite.config.ts     # Vite configuration
 ```
