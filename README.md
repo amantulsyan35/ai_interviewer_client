@@ -89,3 +89,8 @@ ai_interviewer_client/
   ├── tsconfig.json      # TypeScript configuration
   └── vite.config.ts     # Vite configuration
 ```
+
+## Tooling
+
+- **Vercel V0 for design aesthetic**  
+
