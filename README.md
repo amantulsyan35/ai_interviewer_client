@@ -61,6 +61,11 @@ Follow these steps to get started:
    npm dev
    ```
 
+## Sample Job Description
+[Job Title_ Senior Full-Stack Engineer (AI Products).docx](https://github.com/user-attachments/files/20428006/Job.Title_.Senior.Full-Stack.Engineer.AI.Products.docx)
+
+
+
 ## 📜 Available Scripts
 
 - npm dev - Starts the development server.
@@ -93,4 +98,12 @@ ai_interviewer_client/
 ## Tooling
 
 - **Vercel V0 for design aesthetic**  
+
+## Additional Features which can be added to this project
+
+- **Time configurations by user** 
+- **Question configurations by user** 
+- **Ability to pause while giving the interview**
+- **Ability to login to a dashboard app to see interview score and share with other people**
+- **Peer to peer interviews matched by the score**
 
